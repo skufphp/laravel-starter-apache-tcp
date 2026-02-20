@@ -63,7 +63,7 @@ RUN set -eux; \
     apk del .build-deps; \
     rm -rf /tmp/pear ~/.pearrc /var/cache/apk/*
 
-# 5) Конфигурация PHP-FPM (unix socket) + php.ini
+# 5) Конфигурация PHP-FPM (TCP) + php.ini
 RUN rm -f \
       /usr/local/etc/php-fpm.d/www.conf.default \
       /usr/local/etc/php-fpm.d/zz-docker.conf \
