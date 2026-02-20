@@ -178,7 +178,7 @@ cleanup-httpd: ## Удалить .htaccess (не нужен для Nginx)
 	fi
 
 info: ## Показать информацию о проекте
-	@echo "$(YELLOW)Laravel-Httpd-Socket Development Environment$(NC)"
+	@echo "$(YELLOW)Laravel-Httpd-TCP Development Environment$(NC)"
 	@echo "======================================"
 	@echo "$(GREEN)Сервисы:$(NC)"
 	@echo "  • PHP-FPM 8.5 (Alpine)"
