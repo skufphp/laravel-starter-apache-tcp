@@ -1,6 +1,6 @@
 # Инструкция по установке Laravel Boilerplate
 
-Этот boilerplate предназначен для быстрого развертывания Laravel-проекта с архитектурой **PHP-FPM + Httpd (Unix socket) + PostgreSQL + Redis + pgAdmin**.
+Этот boilerplate предназначен для быстрого развертывания Laravel-проекта с архитектурой **PHP-FPM + Httpd (TCP) + PostgreSQL + Redis + pgAdmin**.
 
 ## Для каких приложений подходит эта архитектура
 
@@ -62,8 +62,8 @@ composer create-project laravel/laravel .
 ```dotenv
 # --- Database Connection ---
 # Важно! В основной секции .env замените DB_HOST=127.0.0.1
-# на имя сервиса БД из вашего docker-compose.yml (по умолчанию: laravel-postgres-httpd-socket)
-# А REDIS_HOST=127.0.0.1 на laravel-redis-httpd-socket
+# на имя сервиса БД из вашего docker-compose.yml (по умолчанию: laravel-postgres-httpd-tcp)
+# А REDIS_HOST=127.0.0.1 на laravel-redis-httpd-tcp
 
 # --- pgAdmin Web Interface ---
 # Доступ к pgAdmin: http://localhost:8080
@@ -79,7 +79,7 @@ XDEBUG_CLIENT_HOST=host.docker.internal
 ```
 
 **Важно:** 
-1. В секции БД (в начале `.env`) обязательно замените `DB_HOST=127.0.0.1` на имя сервиса из `docker-compose.yml` (например, `laravel-postgres-httpd-socket`).
+1. В секции БД (в начале `.env`) обязательно замените `DB_HOST=127.0.0.1` на имя сервиса из `docker-compose.yml` (например, `laravel-postgres-httpd-tcp`).
 2. Вы можете изменить имена сервисов, имя базы данных, а также все логины и пароли на свои собственные в файлах `docker-compose.yml` и `.env`.
 
 ### 4. Инициализация проекта
