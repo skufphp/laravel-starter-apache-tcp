@@ -23,7 +23,7 @@ NC=\033[0m
 
 # Переменные Compose
 COMPOSE = docker compose -f docker-compose.yml
-COMPOSE_PROD = docker compose -f docker-compose.prod.yml -f docker-compose.prod.local.yml
+COMPOSE_PROD = docker compose --env-file .env.production -f docker-compose.prod.local.yml
 
 HTTPD_PORT := $(shell grep '^HTTPD_PORT=' .env 2>/dev/null | cut -d '=' -f 2- | tr -d '[:space:]')
 ifeq ($(HTTPD_PORT),)
@@ -59,9 +59,8 @@ check-files: ## Проверить наличие всех необходимы�
 
 check-files-prod: ## Проверить наличие файлов для prod
 	@echo "$(YELLOW)Проверка файлов конфигурации...$(NC)"
-	@test -f docker-compose.prod.yml || (echo "$(RED)✗ docker-compose.prod.yml не найден$(NC)" && exit 1)
 	@test -f docker-compose.prod.local.yml || (echo "$(RED)✗ docker-compose.prod.local.yml не найден$(NC)" && exit 1)
-	@test -f .env || (echo "$(RED)✗ .env не найден. Настройте .env для работы$(NC)" && exit 1)
+	@test -f .env.production || (echo "$(RED)✗ .env.production не найден. Создайте его из .env.production.example$(NC)" && exit 1)
 	@test -f docker/php.Dockerfile || (echo "$(RED)✗ docker/php.Dockerfile не найден$(NC)" && exit 1)
 	@test -f docker/httpd.Dockerfile || (echo "$(RED)✗ docker/httpd.Dockerfile не найден$(NC)" && exit 1)
 	@test -f docker/php/php.prod.ini || (echo "$(RED)✗ docker/php/php.prod.ini не найден$(NC)" && exit 1)
