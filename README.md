@@ -23,7 +23,8 @@
 *   `docker/` — Dockerfiles и конфигурационные файлы для PHP, Httpd и др.
 *   `docker-compose.yml` — Базовая конфигурация сервисов.
 *   `docker-compose.dev.yml` — Переопределения для локальной разработки.
-*   `docker-compose.prod.yml` — Настройки для продакшена.
+*   `docker-compose.prod.yml` — Базовые настройки для продакшена.
+*   `docker-compose.prod.local.yml` — Локальные переопределения для проверки продакшена.
 *   `Makefile` — Главный пульт управления проектом.
 
 ## 🛠 Быстрый старт (Development)
