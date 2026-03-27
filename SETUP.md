@@ -230,87 +230,87 @@ make up-prod
 
 ### Управление контейнерами
 
-| Команда | Описание |
-|---------|----------|
-| `make up` | Запустить проект (dev) |
-| `make up-prod` | Запустить проект (prod) |
-| `make down` | Остановить dev-контейнеры |
-| `make down-prod` | Остановить prod-контейнеры |
-| `make restart` | Перезапустить контейнеры |
-| `make build` | Собрать образы |
-| `make rebuild` | Пересобрать dev-образы без кэша |
-| `make rebuild-prod` | Пересобрать prod-образы без кэша |
-| `make status` | Статус контейнеров |
-| `make clean` | Удалить контейнеры и тома |
-| `make clean-all` | Полная очистка dev (+ образы) |
-| `make dev-reset` | Сброс среды разработки |
-| `make clean-prod` | Удалить prod-контейнеры и тома |
-| `make clean-all-prod` | Полная очистка prod (+ образы) |
-| `make prod-reset` | Сброс prod-среды |
+| Команда               | Описание                         |
+|-----------------------|----------------------------------|
+| `make up`             | Запустить проект (dev)           |
+| `make up-prod`        | Запустить проект (prod)          |
+| `make down`           | Остановить dev-контейнеры        |
+| `make down-prod`      | Остановить prod-контейнеры       |
+| `make restart`        | Перезапустить контейнеры         |
+| `make build`          | Собрать образы                   |
+| `make rebuild`        | Пересобрать dev-образы без кэша  |
+| `make rebuild-prod`   | Пересобрать prod-образы без кэша |
+| `make status`         | Статус контейнеров               |
+| `make clean`          | Удалить контейнеры и тома        |
+| `make clean-all`      | Полная очистка dev (+ образы)    |
+| `make dev-reset`      | Сброс среды разработки           |
+| `make clean-prod`     | Удалить prod-контейнеры и тома   |
+| `make clean-all-prod` | Полная очистка prod (+ образы)   |
+| `make prod-reset`     | Сброс prod-среды                 |
 
 ### Логи
 
-| Команда | Описание |
-|---------|----------|
-| `make logs` | Все dev-сервисы |
-| `make logs-prod` | Все prod-сервисы |
-| `make logs-php` | PHP-FPM |
-| `make logs-php-prod` | PHP-FPM (prod) |
-| `make logs-httpd` | Apache Httpd |
-| `make logs-httpd-prod` | Apache Httpd (prod) |
-| `make logs-postgres` | PostgreSQL |
-| `make logs-postgres-prod` | PostgreSQL (prod) |
-| `make logs-redis` | Redis |
-| `make logs-redis-prod` | Redis (prod) |
-| `make logs-queue` | Queue Worker |
-| `make logs-queue-prod` | Queue Worker (prod) |
-| `make logs-scheduler` | Scheduler |
-| `make logs-scheduler-prod` | Scheduler (prod) |
-| `make logs-node` | Node (HMR) |
-| `make logs-pgadmin` | pgAdmin |
+| Команда                    | Описание            |
+|----------------------------|---------------------|
+| `make logs`                | Все dev-сервисы     |
+| `make logs-prod`           | Все prod-сервисы    |
+| `make logs-php`            | PHP-FPM             |
+| `make logs-php-prod`       | PHP-FPM (prod)      |
+| `make logs-httpd`          | Apache Httpd        |
+| `make logs-httpd-prod`     | Apache Httpd (prod) |
+| `make logs-postgres`       | PostgreSQL          |
+| `make logs-postgres-prod`  | PostgreSQL (prod)   |
+| `make logs-redis`          | Redis               |
+| `make logs-redis-prod`     | Redis (prod)        |
+| `make logs-queue`          | Queue Worker        |
+| `make logs-queue-prod`     | Queue Worker (prod) |
+| `make logs-scheduler`      | Scheduler           |
+| `make logs-scheduler-prod` | Scheduler (prod)    |
+| `make logs-node`           | Node (HMR)          |
+| `make logs-pgadmin`        | pgAdmin             |
 
 ### Shell-доступ
 
-| Команда | Описание |
-|---------|----------|
-| `make shell-php` | Консоль PHP-контейнера |
-| `make shell-php-prod` | Консоль PHP-контейнера (prod) |
-| `make shell-httpd` | Консоль Apache Httpd |
-| `make shell-httpd-prod` | Консоль Apache Httpd (prod) |
-| `make shell-node` | Консоль Node |
-| `make shell-postgres` | PostgreSQL CLI (`psql`) |
-| `make shell-postgres-prod` | PostgreSQL CLI (`psql`) для prod |
-| `make shell-redis` | Redis CLI / ping |
-| `make shell-redis-prod` | Redis CLI / ping для prod |
-| `make shell-queue` | Консоль Queue Worker |
-| `make shell-queue-prod` | Консоль Queue Worker (prod) |
-| `make shell-scheduler` | Консоль Scheduler |
-| `make shell-scheduler-prod` | Консоль Scheduler (prod) |
+| Команда                     | Описание                         |
+|-----------------------------|----------------------------------|
+| `make shell-php`            | Консоль PHP-контейнера           |
+| `make shell-php-prod`       | Консоль PHP-контейнера (prod)    |
+| `make shell-httpd`          | Консоль Apache Httpd             |
+| `make shell-httpd-prod`     | Консоль Apache Httpd (prod)      |
+| `make shell-node`           | Консоль Node                     |
+| `make shell-postgres`       | PostgreSQL CLI (`psql`)          |
+| `make shell-postgres-prod`  | PostgreSQL CLI (`psql`) для prod |
+| `make shell-redis`          | Redis CLI / ping                 |
+| `make shell-redis-prod`     | Redis CLI / ping для prod        |
+| `make shell-queue`          | Консоль Queue Worker             |
+| `make shell-queue-prod`     | Консоль Queue Worker (prod)      |
+| `make shell-scheduler`      | Консоль Scheduler                |
+| `make shell-scheduler-prod` | Консоль Scheduler (prod)         |
 
 ### Laravel и зависимости
 
-| Команда | Описание |
-|---------|----------|
-| `make setup` | Полная инициализация проекта |
-| `make install-deps` | Установить Composer + NPM зависимости |
-| `make artisan CMD="..."` | Любая artisan-команда |
-| `make composer CMD="..."` | Любая composer-команда |
-| `make composer-install` | `composer install` |
-| `make composer-update` | `composer update` |
-| `make composer-require PACKAGE=vendor/pkg` | `composer require` |
-| `make migrate` | Запустить миграции |
-| `make rollback` | Откатить миграции |
-| `make fresh` | Пересоздать БД + сиды |
-| `make tinker` | Laravel Tinker |
-| `make test-php` | PHP-тесты |
-| `make test-coverage` | Тесты с покрытием |
-| `make npm-install` | `npm install` |
-| `make npm-dev` | Vite dev server |
-| `make npm-build` | Production-сборка фронтенда |
-| `make permissions` | Исправить права `storage` и `bootstrap/cache` |
-| `make cleanup-httpd` | Удалить `public/.htaccess` |
-| `make info` | Показать информацию о проекте |
-| `make validate` | Проверить HTTP-доступность сервисов |
+| Команда                                    | Описание                                      |
+|--------------------------------------------|-----------------------------------------------|
+| `make setup`                               | Полная инициализация проекта                  |
+| `make install-deps`                        | Установить Composer + NPM зависимости         |
+| `make artisan CMD="..."`                   | Любая artisan-команда                         |
+| `make composer CMD="..."`                  | Любая composer-команда                        |
+| `make composer-install`                    | `composer install`                            |
+| `make composer-update`                     | `composer update`                             |
+| `make composer-require PACKAGE=vendor/pkg` | `composer require`                            |
+| `make migrate`                             | Запустить миграции                            |
+| `make rollback`                            | Откатить миграции                             |
+| `make fresh`                               | Пересоздать БД + сиды                         |
+| `make tinker`                              | Laravel Tinker                                |
+| `make test-php`                            | PHP-тесты                                     |
+| `make test-coverage`                       | Тесты с покрытием                             |
+| `make npm-install`                         | `npm install`                                 |
+| `make npm-dev`                             | Vite dev server                               |
+| `make npm-build`                           | Production-сборка фронтенда                   |
+| `make permissions`                         | Исправить права `storage` и `bootstrap/cache` |
+| `make cleanup-httpd`                       | Удалить `public/.htaccess`                    |
+| `make info`                                | Показать информацию о проекте                 |
+| `make validate`                            | Проверить HTTP-доступность сервисов           |
 
 ---
 
